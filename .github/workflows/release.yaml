@@ -24,10 +24,22 @@ jobs:
       - name: Install Helm
         uses: azure/setup-helm@v3
 
+      - name: Package Helm Chart
+        run: helm package ./prometheus -d ./charts
+
+      - name: Commit Helm Package
+        run: |
+          git add ./charts/*.tgz
+          git commit -m "Add packaged Helm chart"
+          git push origin main
+        env:
+          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+
       - name: Run chart-releaser
         uses: helm/chart-releaser-action@v1.6.0
         with:
-          skip_existing: true
+          # skip_existing: true
+          charts_dir: ./prometheus
           packages_with_index: true
         env:
           CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
