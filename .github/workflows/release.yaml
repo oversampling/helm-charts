@@ -31,8 +31,7 @@ jobs:
         
       - name: Commit Helm Package
         run: |
-          git add ./charts/*.tgz
-          git add index.yaml
+          git add .
           git commit -m "Add packaged Helm chart"
           git push origin main
         env:
