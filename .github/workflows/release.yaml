@@ -25,8 +25,10 @@ jobs:
         uses: azure/setup-helm@v3
 
       - name: Package Helm Chart
-        run: helm package ./prometheus -d ./charts
-
+        run: |
+          helm package ./prometheus -d ./charts
+          helm repo index charts/ --url https://oversampling.github.io/helm-charts/charts
+        
       - name: Commit Helm Package
         run: |
           git add ./charts/*.tgz

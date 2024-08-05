@@ -1,0 +1,24 @@
+apiVersion: v1
+entries:
+  prometheus:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2024-08-05T13:56:50.757579953+08:00"
+    description: A Helm chart for Kubernetes
+    digest: 398d859035c8cded3339c4160426d273d3945cca08f3e75c7db5257bc7931285
+    name: prometheus
+    type: application
+    urls:
+    - https://oversampling.github.io/helm-charts/charts/prometheus-0.1.1.tgz
+    version: 0.1.1
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2024-08-05T13:56:50.757332492+08:00"
+    description: A Helm chart for Kubernetes
+    digest: 947106e3a29f44bbda614c843f7b44b23c5a08b092d81cc74f51fe81e91a1548
+    name: prometheus
+    type: application
+    urls:
+    - https://oversampling.github.io/helm-charts/charts/prometheus-0.1.0.tgz
+    version: 0.1.0
+generated: "2024-08-05T13:56:50.756927041+08:00"
